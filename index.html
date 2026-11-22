@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101722">
+  <meta name="description" content="Volkswagen Passat 3BG magyar műszaki tudástár">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Passat 3BG Knowledge</title>
+</head>
+<body>
+  <header class="top">
+    <div class="brand-mark">3BG</div>
+    <div><div class="eyebrow">VOLKSWAGEN TECHNICAL DATABASE</div><h1>PASSAT 3BG</h1><div class="sub">KNOWLEDGE · MAGYAR KIADÁS</div></div>
+    <button id="installBtn" class="install hidden" aria-label="Alkalmazás telepítése">Telepítés</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><span class="pill">MŰSZAKI TUDÁSTÁR</span><h2>A Passatod.<br><em>Minden tudás egy helyen.</em></h2><p>Hibakódok, alkatrészek, kompatibilitás és szerelési információk – egy helyen.</p></div>
+      <div class="car-art" aria-label="Passat 3BG stilizált illusztráció"><div class="car-roof"></div><div class="car-body"></div><div class="wheel w1"></div><div class="wheel w2"></div></div>
+    </section>
+
+    <section class="vehicle panel">
+      <div class="section-head"><div><div class="eyebrow">AKTUÁLIS JÁRMŰ</div><h2>Járműprofil</h2></div><span class="status">Helyben tárolva</span></div>
+      <div class="fields">
+        <label>Motorcsalád<select id="engine"><option>1.9 TDI – adagolós</option><option selected>1.9 PD TDI</option><option>2.5 V6 TDI</option><option>Egyéb motor</option></select></label>
+        <label>Motorkód<select id="engineCode"><option>AVB</option><option selected>AWX</option><option>AVF</option><option>Nem ismert</option></select></label>
+        <label>Évjárat<select id="year"><option>2001</option><option selected>2002</option><option>2003</option><option>2004</option><option>2005</option></select></label>
+        <label>Karosszéria<select id="body"><option>Sedan</option><option>Variant / Kombi</option></select></label>
+        <label>Hajtás<select id="drive"><option>Elsőkerék-meghajtás</option><option>4Motion</option></select></label>
+        <label>Fék PR-kód<input id="pr" placeholder="Pl. 1LT – ha ismert"></label>
+      </div>
+      <button class="primary" id="saveVehicle">Járműprofil mentése</button><span id="saveNote" class="note" role="status"></span>
+    </section>
+
+    <nav class="tabs" aria-label="Fő navigáció">
+      <button class="tab active" data-tab="home">Áttekintés</button>
+      <button class="tab" data-tab="brakes">Fékrendszer</button>
+      <button class="tab" data-tab="codes">Hibakódok</button>
+      <button class="tab" data-tab="parts">Alkatrészek</button>
+    </nav>
+
+    <section id="home" class="view active">
+      <div class="section-head"><div><div class="eyebrow">GYORS ELÉRÉS</div><h2>Műszaki központ</h2></div></div>
+      <div class="tiles">
+        <button class="tile" data-go="brakes"><span class="tile-icon">◉</span><b>Fékrendszer</b><small>Tárcsák, betétek, nyergek</small></button>
+        <button class="tile" data-go="codes"><span class="tile-icon">⌕</span><b>Hibakód-adatbázis</b><small>OBD-II és VAG kódok</small></button>
+        <button class="tile" data-go="parts"><span class="tile-icon">⚙</span><b>Alkatrészkatalógus</b><small>Gyári cikkszámok</small></button>
+        <div class="tile disabled"><span class="tile-icon">◇</span><b>3D járműnézet</b><small>Fejlesztés alatt</small></div>
+      </div>
+      <div class="notice"><b>Adatpontosság mindenekelőtt</b><p>A cikkszámok és kompatibilitások csak ellenőrzött, járműspecifikus forrás alapján jelölhetők gyáriként. A hiányzó adatot az alkalmazás nem találgatja ki.</p></div>
+    </section>
+
+    <section id="brakes" class="view">
+      <div class="section-head"><div><div class="eyebrow">ALKATRÉSZCSOPORT</div><h2>Fékrendszer</h2></div><span class="pill">1.9 PD TDI</span></div>
+      <div class="notice warning"><b>Kompatibilitási figyelmeztetés</b><p>A fék mérete és cikkszáma PR-kódtól, tengelyterheléstől, gyártási időtől és hajtástól is függhet. Vásárlás előtt VIN/PR-kód szerinti ellenőrzés szükséges.</p></div>
+      <input id="brakeSearch" class="search" placeholder="Keresés: féktárcsa, féknyereg, betét…">
+      <div id="brakeList" class="catalog"></div>
+    </section>
+
+    <section id="codes" class="view">
+      <div class="section-head"><div><div class="eyebrow">DIAGNOSZTIKA</div><h2>Hibakód-adatbázis</h2></div></div>
+      <input id="codeSearch" class="search" placeholder="Hibakód vagy megnevezés…">
+      <div id="codeList" class="catalog"></div>
+      <p class="note">A hibakód rövid leírása nem helyettesíti a vezérlőegység gyári diagnosztikai eljárását.</p>
+    </section>
+
+    <section id="parts" class="view">
+      <div class="section-head"><div><div class="eyebrow">KATALÓGUS</div><h2>Alkatrészcsoportok</h2></div></div>
+      <div class="catalog">
+        <article class="item"><div class="item-icon">◉</div><div><b>Fékrendszer</b><small>Első/hátsó fék, hidraulika, ABS/ESP</small></div><span class="tag">Előkészítve</span></article>
+        <article class="item"><div class="item-icon">⚙</div><div><b>Motor és vezérlés</b><small>Motorkód szerinti alkatrészek</small></div><span class="tag">Következő</span></article>
+        <article class="item"><div class="item-icon">⌁</div><div><b>Turbó és szívórendszer</b><small>Turbó, vákuum, EGR, töltőlevegő</small></div><span class="tag">Tervezett</span></article>
+        <article class="item"><div class="item-icon">▤</div><div><b>Futómű és kormányzás</b><small>Első/hátsó futómű, összekötők</small></div><span class="tag">Tervezett</span></article>
+        <article class="item"><div class="item-icon">ϟ</div><div><b>Elektromos rendszer</b><small>Vezérlők, érzékelők, kapcsolási rajzok</small></div><span class="tag">Tervezett</span></article>
+      </div>
+    </section>
+
+    <footer><span>PASSAT 3BG KNOWLEDGE · v0.1</span><span id="network">Kapcsolat ellenőrzése…</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
