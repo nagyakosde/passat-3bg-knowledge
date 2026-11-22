@@ -1,5 +1,1 @@
-const CACHE="passat-3bg-v1";
-const FILES=["./","./index.html","./style.css","./app.js","./manifest.webmanifest","./icon-192.png",".icon-512.png"];
-self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
-self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
-self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(res=>{const copy=res.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return res;}).catch(()=>caches.match("./index.html"))));});
+const CACHE="passat-3bg-nexus-release-1";const FILES=["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png"];self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith("passat-3bg-")&&k!==CACHE).map(k=>caches.delete(k))))));self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;e.respondWith(caches.match(e.request).then(x=>x||fetch(e.request).then(r=>{if(r.ok){let c=r.clone();caches.open(CACHE).then(k=>k.put(e.request,c))}return r}).catch(()=>caches.match("./index.html")))))});

@@ -1,87 +1,114 @@
 <!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#101722">
-  <meta name="description" content="Volkswagen Passat 3BG magyar műszaki tudástár">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icons/icon-192.png">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="stylesheet" href="style.css">
-  <title>Passat 3BG Knowledge</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080e16"><meta name="description" content="Passat 3BG Nexus – nyilvános magyar műszaki tudásközpont">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png">
+<title>Passat 3BG Nexus</title>
+<style>
+:root{--bg:#070c13;--panel:#101a26;--panel2:#162536;--line:#2a4054;--blue:#63bfff;--ice:#c8ecff;--muted:#91a6b8;--text:#edf6fd;--gold:#d9b875;--green:#69dcae;--red:#ff8585}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -12%,#24435c 0,transparent 42%),linear-gradient(180deg,#0a1420,#070c13 65%);color:var(--text);font:14px/1.48 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1120px;margin:auto;padding:0 16px 42px}
+header{height:70px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:20;padding:0 max(16px,calc((100vw - 1088px)/2));background:#080e16ed;backdrop-filter:blur(18px);border-bottom:1px solid #24384b}
+.logo{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;border:1px solid #5b9bc3;background:linear-gradient(145deg,#274b66,#0c1b29);color:#d4efff;font-weight:950;letter-spacing:-2px;box-shadow:0 0 24px #58baff25}
+.brand strong{display:block;font-size:14px;letter-spacing:.13em}.brand small{display:block;color:var(--blue);font-size:9px;letter-spacing:.19em;margin-top:4px}.headright{margin-left:auto;text-align:right;font-size:10px;color:var(--muted)}.headright b{color:var(--green);font-size:11px}
+.hero{margin:18px 0 14px;min-height:265px;position:relative;overflow:hidden;border:1px solid #36536a;border-radius:22px;background:linear-gradient(110deg,#142a3e,#0b1622 58%,#132537);box-shadow:0 18px 55px #0006}
+.hero:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 33px,#a9dfff08 34px 35px);pointer-events:none}
+.heroText{position:relative;z-index:2;padding:26px 24px;max-width:520px}.eyebrow{font-size:9px;letter-spacing:.2em;color:var(--blue);font-weight:850}.heroTag{display:inline-block;border:1px solid #47728f;border-radius:30px;padding:5px 9px;color:#c9ecff;font-size:9px;letter-spacing:.14em}
+.hero h1{font-size:clamp(29px,6vw,48px);line-height:.99;letter-spacing:-.045em;margin:13px 0 10px}.hero h1 span{color:var(--ice)}.hero p{color:#aec1d0;font-size:13px;max-width:360px}.heroCar{position:absolute;right:-12px;bottom:16px;width:min(54%,520px);height:150px;filter:drop-shadow(0 20px 17px #000b)}
+.car{position:absolute;bottom:18px;left:0;width:100%;height:80px;background:linear-gradient(180deg,#edf4f7 0%,#8ea4b3 36%,#3b5060 74%,#172632 100%);clip-path:polygon(3% 48%,12% 37%,21% 33%,31% 5%,66% 3%,78% 31%,93% 39%,99% 57%,97% 84%,5% 84%);border-radius:22px}
+.car:before{content:"";position:absolute;left:29%;top:8%;width:38%;height:33%;background:linear-gradient(110deg,#132e43,#9ab3c4 62%,#1a3448);clip-path:polygon(12% 0,86% 0,100% 100%,0 100%)}
+.car:after{content:"";position:absolute;left:5%;top:56%;width:90%;height:3px;background:#d7f2ff;box-shadow:0 0 10px #9cddff}
+.wheel{position:absolute;bottom:0;width:48px;height:48px;border:7px solid #101922;border-radius:50%;background:radial-gradient(circle,#d1e0e9 0 17%,#4c6274 20% 42%,#0b1118 46%);z-index:2}.wheel.a{left:18%}.wheel.b{right:17%}
+.btn{border:1px solid #4c94c2;background:linear-gradient(135deg,#205d83,#15344b);color:#fff;padding:10px 14px;border-radius:10px;font-size:11px;font-weight:850}.btn.ghost{background:#142333;border-color:#304a60;color:#d8ebf8}
+.layout{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}.panel{background:linear-gradient(145deg,#142434ed,#0d1722ed);border:1px solid var(--line);border-radius:17px;padding:16px;box-shadow:0 10px 28px #0003}.s12{grid-column:span 12}.s8{grid-column:span 8}.s6{grid-column:span 6}.s4{grid-column:span 4}
+.titleRow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}.titleRow h2{font-size:16px;margin:2px 0}.chip{font-size:9px;border:1px solid #42647d;border-radius:30px;padding:5px 8px;color:#c4e9ff;background:#173047}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.field label{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}.field input,.field select,.search{width:100%;min-width:0;padding:10px;border-radius:10px;border:1px solid #304a60;background:#09141f;color:var(--text);outline:none}.field input:focus,.field select:focus,.search:focus{border-color:var(--blue);box-shadow:0 0 0 2px #63bfff20}
+.nav{display:flex;gap:7px;overflow:auto;position:sticky;top:70px;z-index:15;padding:12px 0;background:#080e16ed;backdrop-filter:blur(14px)}.nav button{white-space:nowrap;border:1px solid #2a4358;border-radius:10px;padding:9px 12px;background:#101e2b;color:#abc0d0;font-size:10px;font-weight:850}.nav button.active{background:#1b4b6c;border-color:#63bfff;color:#fff}
+.view{display:none}.view.active{display:block}.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.tile{min-height:106px;text-align:left;border:1px solid #29445a;border-radius:14px;background:#0c1a27;color:var(--text);padding:12px}.tile i{font-style:normal;display:block;color:var(--blue);font-size:23px;margin-bottom:7px}.tile b{display:block;font-size:12px}.tile small{color:var(--muted);font-size:10px}
+.notice{padding:11px 12px;background:#2a251b;border-left:3px solid var(--gold);border-radius:8px;color:#decda8;font-size:11px;margin:11px 0}.notice.blue{background:#10263a;border-color:var(--blue);color:#c0dff2}.notice.red{background:#2b1a1c;border-color:var(--red);color:#f2c2c2}
+.search{margin:5px 0 10px}.list{display:grid;gap:8px}.item{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #263f54;background:#0a1622;border-radius:12px}.symbol{width:34px;height:34px;display:grid;place-items:center;flex:0 0 34px;border-radius:10px;background:#1a374d;color:#85ceff;font-size:18px}.desc{flex:1;min-width:0}.desc b{font-size:12px}.desc small{display:block;color:var(--muted);font-size:10px}.tag{font-size:9px;border:1px solid #6a5736;color:var(--gold);border-radius:20px;padding:4px 6px;white-space:nowrap}
+.result{margin-top:8px;border:1px solid #2b465c;background:#0a1622;border-radius:12px;padding:13px}.result h3{font-size:13px;margin:3px 0}.result p{font-size:11px;color:#b6c8d5;margin:5px 0}.result small{color:var(--blue);font-size:9px;letter-spacing:.1em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{font-size:24px;font-weight:900;color:var(--ice)}
+.diagram{height:205px;position:relative;border:1px solid #34536b;border-radius:15px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#274760,#0a1521 72%);display:grid;place-items:center}.diagram .car{width:68%;left:16%;height:83px;bottom:58px}.diagram .wheel{bottom:43px;width:38px;height:38px}.pin{position:absolute;border:1px solid #8dd5ff;background:#0d2d44;color:#e0f5ff;border-radius:30px;padding:6px 9px;font-size:10px}.pin.p1{top:12px;left:12px}.pin.p2{top:12px;right:12px}.pin.p3{bottom:12px;left:12px}.pin.p4{bottom:12px;right:12px}
+footer{border-top:1px solid #24394b;margin-top:22px;padding:14px 2px;display:flex;justify-content:space-between;color:#7891a5;font-size:9px;letter-spacing:.1em}
+@media(max-width:680px){.s8,.s6,.s4{grid-column:span 12}.hero{min-height:290px}.heroCar{width:72%;right:-25px;opacity:.85}.heroText{padding:22px 17px}.hero p{max-width:270px}.fields{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:repeat(2,1fr)}.nav{margin:0 -16px;padding:12px 16px}.headright{display:none}}
+</style>
 </head>
 <body>
-  <header class="top">
-    <div class="brand-mark">3BG</div>
-    <div><div class="eyebrow">VOLKSWAGEN TECHNICAL DATABASE</div><h1>PASSAT 3BG</h1><div class="sub">KNOWLEDGE · MAGYAR KIADÁS</div></div>
-    <button id="installBtn" class="install hidden" aria-label="Alkalmazás telepítése">Telepítés</button>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-copy"><span class="pill">MŰSZAKI TUDÁSTÁR</span><h2>A Passatod.<br><em>Minden tudás egy helyen.</em></h2><p>Hibakódok, alkatrészek, kompatibilitás és szerelési információk – egy helyen.</p></div>
-      <div class="car-art" aria-label="Passat 3BG stilizált illusztráció"><div class="car-roof"></div><div class="car-body"></div><div class="wheel w1"></div><div class="wheel w2"></div></div>
-    </section>
-
-    <section class="vehicle panel">
-      <div class="section-head"><div><div class="eyebrow">AKTUÁLIS JÁRMŰ</div><h2>Járműprofil</h2></div><span class="status">Helyben tárolva</span></div>
-      <div class="fields">
-        <label>Motorcsalád<select id="engine"><option>1.9 TDI – adagolós</option><option selected>1.9 PD TDI</option><option>2.5 V6 TDI</option><option>Egyéb motor</option></select></label>
-        <label>Motorkód<select id="engineCode"><option>AVB</option><option selected>AWX</option><option>AVF</option><option>Nem ismert</option></select></label>
-        <label>Évjárat<select id="year"><option>2001</option><option selected>2002</option><option>2003</option><option>2004</option><option>2005</option></select></label>
-        <label>Karosszéria<select id="body"><option>Sedan</option><option>Variant / Kombi</option></select></label>
-        <label>Hajtás<select id="drive"><option>Elsőkerék-meghajtás</option><option>4Motion</option></select></label>
-        <label>Fék PR-kód<input id="pr" placeholder="Pl. 1LT – ha ismert"></label>
-      </div>
-      <button class="primary" id="saveVehicle">Járműprofil mentése</button><span id="saveNote" class="note" role="status"></span>
-    </section>
-
-    <nav class="tabs" aria-label="Fő navigáció">
-      <button class="tab active" data-tab="home">Áttekintés</button>
-      <button class="tab" data-tab="brakes">Fékrendszer</button>
-      <button class="tab" data-tab="codes">Hibakódok</button>
-      <button class="tab" data-tab="parts">Alkatrészek</button>
-    </nav>
-
-    <section id="home" class="view active">
-      <div class="section-head"><div><div class="eyebrow">GYORS ELÉRÉS</div><h2>Műszaki központ</h2></div></div>
-      <div class="tiles">
-        <button class="tile" data-go="brakes"><span class="tile-icon">◉</span><b>Fékrendszer</b><small>Tárcsák, betétek, nyergek</small></button>
-        <button class="tile" data-go="codes"><span class="tile-icon">⌕</span><b>Hibakód-adatbázis</b><small>OBD-II és VAG kódok</small></button>
-        <button class="tile" data-go="parts"><span class="tile-icon">⚙</span><b>Alkatrészkatalógus</b><small>Gyári cikkszámok</small></button>
-        <div class="tile disabled"><span class="tile-icon">◇</span><b>3D járműnézet</b><small>Fejlesztés alatt</small></div>
-      </div>
-      <div class="notice"><b>Adatpontosság mindenekelőtt</b><p>A cikkszámok és kompatibilitások csak ellenőrzött, járműspecifikus forrás alapján jelölhetők gyáriként. A hiányzó adatot az alkalmazás nem találgatja ki.</p></div>
-    </section>
-
-    <section id="brakes" class="view">
-      <div class="section-head"><div><div class="eyebrow">ALKATRÉSZCSOPORT</div><h2>Fékrendszer</h2></div><span class="pill">1.9 PD TDI</span></div>
-      <div class="notice warning"><b>Kompatibilitási figyelmeztetés</b><p>A fék mérete és cikkszáma PR-kódtól, tengelyterheléstől, gyártási időtől és hajtástól is függhet. Vásárlás előtt VIN/PR-kód szerinti ellenőrzés szükséges.</p></div>
-      <input id="brakeSearch" class="search" placeholder="Keresés: féktárcsa, féknyereg, betét…">
-      <div id="brakeList" class="catalog"></div>
-    </section>
-
-    <section id="codes" class="view">
-      <div class="section-head"><div><div class="eyebrow">DIAGNOSZTIKA</div><h2>Hibakód-adatbázis</h2></div></div>
-      <input id="codeSearch" class="search" placeholder="Hibakód vagy megnevezés…">
-      <div id="codeList" class="catalog"></div>
-      <p class="note">A hibakód rövid leírása nem helyettesíti a vezérlőegység gyári diagnosztikai eljárását.</p>
-    </section>
-
-    <section id="parts" class="view">
-      <div class="section-head"><div><div class="eyebrow">KATALÓGUS</div><h2>Alkatrészcsoportok</h2></div></div>
-      <div class="catalog">
-        <article class="item"><div class="item-icon">◉</div><div><b>Fékrendszer</b><small>Első/hátsó fék, hidraulika, ABS/ESP</small></div><span class="tag">Előkészítve</span></article>
-        <article class="item"><div class="item-icon">⚙</div><div><b>Motor és vezérlés</b><small>Motorkód szerinti alkatrészek</small></div><span class="tag">Következő</span></article>
-        <article class="item"><div class="item-icon">⌁</div><div><b>Turbó és szívórendszer</b><small>Turbó, vákuum, EGR, töltőlevegő</small></div><span class="tag">Tervezett</span></article>
-        <article class="item"><div class="item-icon">▤</div><div><b>Futómű és kormányzás</b><small>Első/hátsó futómű, összekötők</small></div><span class="tag">Tervezett</span></article>
-        <article class="item"><div class="item-icon">ϟ</div><div><b>Elektromos rendszer</b><small>Vezérlők, érzékelők, kapcsolási rajzok</small></div><span class="tag">Tervezett</span></article>
-      </div>
-    </section>
-
-    <footer><span>PASSAT 3BG KNOWLEDGE · v0.1</span><span id="network">Kapcsolat ellenőrzése…</span></footer>
-  </main>
-  <script src="app.js"></script>
-</body>
-</html>
+<header><div class="logo">3BG</div><div class="brand"><strong>PASSAT 3BG NEXUS</strong><small>DIGITÁLIS MŰSZAKI KÖZPONT</small></div><div class="headright"><b id="net">● ONLINE</b><br>MAGYAR KIADÁS · TELJES KIADÁSI ALAP</div></header>
+<main class="wrap">
+<section class="hero"><div class="heroText"><span class="heroTag">VOLKSWAGEN PASSAT · 3BG</span><h1>A TE PASSATOD.<br><span>MINDEN RÉSZLETÉBEN.</span></h1><p>Hibakódok, alkatrészek, műszaki dokumentáció és járműismeret – egyetlen Passat-központban.</p><button class="btn" onclick="go('diagnostics')">DIAGNOSZTIKA MEGNYITÁSA ↗</button></div><div class="heroCar"><div class="car"></div><div class="wheel a"></div><div class="wheel b"></div></div></section>
+<section class="layout">
+<div class="panel s8"><div class="titleRow"><div><div class="eyebrow">SAJÁT JÁRMŰ</div><h2>Járműprofil</h2></div><span class="chip">3BG PLATFORM</span></div>
+<div class="fields">
+<div class="field"><label>Motorcsalád</label><select id="engine"><option>1.9 TDI – adagolós</option><option selected>1.9 PD TDI</option><option>2.5 V6 TDI</option><option>Egyéb 3BG motor</option></select></div>
+<div class="field"><label>Motorkód</label><select id="engineCode"><option>AVB</option><option selected>AWX</option><option>AVF</option><option>Más / ismeretlen</option></select></div>
+<div class="field"><label>Évjárat</label><select id="year"><option>2000</option><option>2001</option><option selected>2002</option><option>2003</option><option>2004</option><option>2005</option></select></div>
+<div class="field"><label>Karosszéria</label><select id="body"><option>Sedan</option><option>Variant / Kombi</option></select></div>
+<div class="field"><label>Hajtás</label><select id="drive"><option>Elsőkerék-meghajtás</option><option>4Motion</option></select></div>
+<div class="field"><label>Fék PR-kód</label><input id="pr" placeholder="Ha ismert"></div>
+</div><button class="btn" id="save" style="margin-top:11px">JÁRMŰPROFIL MENTÉSE</button> <small id="saved" style="color:var(--green)"></small></div>
+<div class="panel s4"><div class="eyebrow">A TUDÁSTÁR ALAPELVE</div><h2 style="margin:5px 0 12px">Pontosság mindenekelőtt</h2><div class="two"><div><div class="stat">3BG</div><small style="color:var(--muted)">modellcsalád</small></div><div><div class="stat">HU</div><small style="color:var(--muted)">magyar nyelv</small></div></div><div class="notice blue">A bizonytalan cikkszámot és kompatibilitást nem tüntetjük fel igazolt gyári adatként.</div></div>
+<div class="panel s12"><div class="titleRow"><div><div class="eyebrow">GYORS NAVIGÁCIÓ</div><h2>Műszaki területek</h2></div></div><div class="tiles">
+<button class="tile" onclick="go('diagnostics')"><i>⌕</i><b>Hibakód-adatbázis</b><small>OBD-II és VAG vezérlők</small></button>
+<button class="tile" onclick="go('parts')"><i>⚙</i><b>Alkatrészkatalógus</b><small>OE számok és illeszkedés</small></button>
+<button class="tile" onclick="go('brakes')"><i>◉</i><b>Fékrendszer</b><small>Tárcsa, betét, nyereg</small></button>
+<button class="tile" onclick="go('vehicle')"><i>▱</i><b>Járműnézet</b><small>Szerkezeti egységek</small></button>
+</div></div></section>
+<nav class="nav"><button class="active" data-tab="home">ÁTTEKINTÉS</button><button data-tab="diagnostics">HIBAKÓDOK</button><button data-tab="parts">ALKATRÉSZEK</button><button data-tab="brakes">FÉKRENDSZER</button><button data-tab="vehicle">JÁRMŰNÉZET</button><button data-tab="docs">DOKUMENTÁCIÓ</button></nav>
+<section id="home" class="view active"></section>
+<section id="diagnostics" class="view"><div class="panel"><div class="eyebrow">VAG / OBD DIAGNOSZTIKA</div><h2>Hibakód-adatbázis</h2><p class="muted">Keresés hibakód, vezérlőegység vagy megnevezés alapján.</p><input class="search" id="codeSearch" placeholder="Például: P0299, turbó, ABS, légzsák"><div id="codeResults"></div><div class="notice">A megjelenített mintakódok általános leírások. A teljes VAG-kódállomány, pontos gyári szöveg és vezérlőspecifikus tesztelés ellenőrzött dokumentációval bővítendő.</div></div></section>
+<section id="parts" class="view"><div class="panel"><div class="eyebrow">TELJES 3BG ALKATRÉSZSTRUKTÚRA</div><h2>Alkatrészkatalógus</h2><input class="search" id="partSearch" placeholder="Alkatrészcsoport keresése…"><div id="partList" class="list"></div><div class="notice">Az alkatrészoldalakhoz VIN/PR-alapú kompatibilitás, gyári OE szám, kiváltási lánc és ábra tartozik. A nem igazolt mezők üresen maradnak.</div></div></section>
+<section id="brakes" class="view"><div class="panel"><div class="eyebrow">ALKATRÉSZCSOPORT · FÉKRENDSZER</div><h2>Fékalkatrész-katalógus</h2><input class="search" id="brakeSearch" placeholder="Féktárcsa, fékbetét, féknyereg…"><div id="brakeList"></div><div class="notice">Fékalkatrészt kizárólag alvázszám, PR-kód, tengelyterhelés, hajtás és gyártási idő szerint szabad véglegesíteni.</div></div></section>
+<section id="vehicle" class="view"><div class="panel"><div class="eyebrow">KAROSSZÉRIA ÉS SZERKEZET</div><h2>Interaktív járműtérkép</h2><p class="muted">Válassz szerkezeti egységet a katalógus megnyitásához.</p><div class="diagram"><div class="car"></div><div class="wheel a"></div><div class="wheel b"></div><button class="pin p1" onclick="go('parts');filterParts('Motor')">MOTOR</button><button class="pin p2" onclick="go('brakes')">ELSŐ FÉK</button><button class="pin p3" onclick="go('parts');filterParts('Futómű')">FUTÓMŰ</button><button class="pin p4" onclick="go('brakes')">HÁTSÓ FÉK</button></div><div class="notice blue">A valódi, 360°-ban forgatható, részletes 3D modell és a gyári robbantott ábrák külön, hiteles modellekkel és licencelt dokumentációval integrálandók.</div></div></section>
+<section id="docs" class="view"><div class="panel"><div class="eyebrow">MŰSZAKI TUDÁSTÁR</div><h2>Dokumentáció és szerelési útmutatók</h2><div class="notice blue">A javítási eljárások, meghúzási nyomatékok, kapcsolási rajzok és mérési határértékek csak az adott motorkódhoz, évjárathoz és vezérlőváltozathoz ellenőrzött forrásból kerülhetnek be.</div><div class="list" id="docList"></div></div></section>
+<footer><span>PASSAT 3BG NEXUS · MAGYAR TUDÁSKÖZPONT</span><span>ANDROID · iOS · ONLINE / OFFLINE</span></footer>
+</main>
+<script>
+const DTC=[
+["P0299","Motorvezérlés","Töltőnyomás-szabályozás – alacsony töltőnyomás","Lehetséges terület: töltőlevegő-rendszer, vákuumvezérlés, turbó vagy érzékelés. A pontos ok mérés nélkül nem állapítható meg."],
+["P0234","Motorvezérlés","Töltőnyomás-szabályozás – túltöltés","Ellenőrizendő: szabályozómechanika, vákuumcsövek, N75 vezérlés és nyomásjel. Ne cserélj turbót pusztán a kód alapján."],
+["P0101","Motorvezérlés","Légtömegmérő – tartomány/teljesítmény","Ellenőrizendő a légszűrő, szívócső, csatlakozás, kábelezés és a mért légtömeg terhelés alatt."],
+["P0102","Motorvezérlés","Légtömegmérő – alacsony bemeneti jel","Lehetséges elektromos kör- vagy jelprobléma. Ellenőrizd a csatlakozót, tápellátást és vezetékezést."],
+["P0103","Motorvezérlés","Légtömegmérő – magas bemeneti jel","A jel túl magas lehet; vizsgálandó a vezeték, csatlakozó és érzékelő."],
+["P0118","Motorvezérlés","Hűtőfolyadék-hőmérséklet érzékelő – magas bemeneti jel","Ellenőrizd a jeladót, csatlakozót és vezetékezést; hideg motornál hasonlítsd össze a környezeti hőmérséklettel."],
+["P0235","Motorvezérlés","Töltőnyomás-érzékelő A – áramkörhiba","Vizsgálandó a MAP érzékelő, csatlakozó, táp és jelvezeték."],
+["P0401","Motorvezérlés","EGR – elégtelen áramlás","Ellenőrizendő az EGR szelep, csatornák, vákuumvezérlés és a kapcsolódó mérési értékek."],
+["P0402","Motorvezérlés","EGR – túl nagy áramlás","Ellenőrizendő az EGR szelep zárása, vezérlése és a levegőmennyiség-mérés."],
+["P0380","Motorvezérlés","Izzítási rendszer – áramkörhiba","Ellenőrizendő az izzítógyertyák, biztosíték, relé és kábelezés."],
+["P0671","Motorvezérlés","1. henger izzítógyertya áramköre","Ellenőrizendő az adott henger izzítógyertyája és csatlakozása."],
+["P0672","Motorvezérlés","2. henger izzítógyertya áramköre","Ellenőrizendő az adott henger izzítógyertyája és csatlakozása."],
+["P0673","Motorvezérlés","3. henger izzítógyertya áramköre","Ellenőrizendő az adott henger izzítógyertyája és csatlakozása."],
+["P0674","Motorvezérlés","4. henger izzítógyertya áramköre","Ellenőrizendő az adott henger izzítógyertyája és csatlakozása."],
+["P0300","Motorvezérlés","Véletlenszerű/többhengeres égéskimaradás","Dízelmotoron a vezérlő gyártóspecifikus értelmezése eltérhet; vizsgáld a hibakörnyezetet és a motoradatokat."]
+];
+const BRAKES=[
+["Első féktárcsa","Első tengely","Átmérő, vastagság, középfurat és PR-kód alapján azonosítandó."],
+["Első fékbetétkészlet","Első tengely","Féknyereg- és tárcsaváltozat szerint választandó."],
+["Első féknyereg és tartó","Bal / jobb","Féknyereg-gyártó, dugattyú és konzol szerint."],
+["Hátsó féktárcsa","Hátsó tengely","Tömör vagy hűtött kivitel; hajtás és PR-kód szerint."],
+["Hátsó fékbetétkészlet","Hátsó tengely","Féknyereg-változat és gyártási idő szerint."],
+["Hátsó féknyereg","Bal / jobb","Kézifékmechanikával együtt azonosítandó."],
+["Fékcső és flexibilis tömlő","Hidraulika","Oldal, tengely és fékkivitel alapján."],
+["ABS/ESP érzékelő és hidraulikaegység","Elektronika","Vezérlőegység- és PR-változat szerint."],
+["Főfékhenger és fékrásegítő","Hidraulika","Felszereltség, vákuumrendszer és fékrendszer szerint."],
+["Kézifékkötél és mechanika","Hátsó tengely","Karosszéria és hátsó féknyereg szerint."]
+];
+const PARTS=["Motor és vezérlés","Turbó és szívórendszer","Üzemanyag-rendszer","Hűtőrendszer","Kuplung és sebességváltó","Első futómű","Hátsó futómű","Fékrendszer","Kormányzás","Karosszéria – Sedan","Karosszéria – Variant","Elektromos rendszer","Komfortelektronika","Klíma és fűtés","Belső tér","Kipufogórendszer","Üzemanyag-ellátás","Hajtáslánc – 4Motion"];
+const DOCS=["Motorkódok és motorváltozatok","Vezérlés és motorikus javítások","Turbófeltöltő és vákuumrendszer","Fékek – ellenőrzés és karbantartás","Futómű – geometria és szerelés","Elektromos kapcsolási rajzok","Meghúzási nyomatékok","Folyadékok és feltöltési mennyiségek","Diagnosztikai mérési blokkok"];
+function go(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>go(b.dataset.tab));
+function renderDtc(q=""){document.getElementById("codeResults").innerHTML=DTC.filter(x=>x.join(" ").toLowerCase().includes(q.toLowerCase())).map(x=>`<article class="result"><small>${x[1]} · ÁLTALÁNOS OBD LEÍRÁS</small><h3>${x[0]} – ${x[2]}</h3><p>${x[3]}</p></article>`).join("")||'<p class="muted">Nincs találat.</p>'}
+function renderBrake(q=""){document.getElementById("brakeList").innerHTML=BRAKES.filter(x=>x.join(" ").toLowerCase().includes(q.toLowerCase())).map(x=>`<article class="result"><small>${x[1]}</small><h3>${x[0]}</h3><p>${x[2]}</p><p><b>Gyári cikkszám: VIN/PR ellenőrzés szükséges.</b></p></article>`).join("")||'<p class="muted">Nincs találat.</p>'}
+function renderParts(q=""){document.getElementById("partList").innerHTML=PARTS.filter(x=>x.toLowerCase().includes(q.toLowerCase())).map(x=>`<div class="item"><div class="symbol">⚙</div><div class="desc"><b>${x}</b><small>Passat 3BG · járműspecifikus kompatibilitás</small></div><span class="tag">${x==="Fékrendszer"?"KATALÓGUS":"MODUL"}</span></div>`).join("")}
+function filterParts(q){document.getElementById("partSearch").value=q;renderParts(q)}
+function renderDocs(){document.getElementById("docList").innerHTML=DOCS.map(x=>`<div class="item"><div class="symbol">▤</div><div class="desc"><b>${x}</b><small>Forrásellenőrzött dokumentációs modul</small></div><span class="tag">BŐVÍTENDŐ</span></div>`).join("")}
+document.getElementById("codeSearch").addEventListener("input",e=>renderDtc(e.target.value));document.getElementById("brakeSearch").addEventListener("input",e=>renderBrake(e.target.value));document.getElementById("partSearch").addEventListener("input",e=>renderParts(e.target.value));
+const keys=["engine","engineCode","year","body","drive","pr"];keys.forEach(k=>{let v=localStorage.getItem("p3bg_"+k);if(v!==null)document.getElementById(k).value=v});
+document.getElementById("save").onclick=()=>{keys.forEach(k=>localStorage.setItem("p3bg_"+k,document.getElementById(k).value));document.getElementById("saved").textContent="Mentve ezen az eszközön ✓"};
+renderDtc();renderBrake();renderParts();renderDocs();
+function net(){document.getElementById("net").textContent=navigator.onLine?"● ONLINE":"● OFFLINE"}window.addEventListener("online",net);window.addEventListener("offline",net);net();
+if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+</script>
+</body></html>

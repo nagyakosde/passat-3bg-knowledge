@@ -1,28 +1,19 @@
-PASSAT 3BG KNOWLEDGE – PWA prototípus
-=====================================
+PASSAT 3BG NEXUS – EGYSÉGES FELTÖLTÉSI CSOMAG
 
-Mi található benne?
-- Magyar nyelvű, reszponzív kezelőfelület
-- Járműprofil (motorcsalád, motorkód, évjárat, karosszéria, hajtás, PR-kód)
-- Fékrendszer-katalógus váz
-- Példa OBD hibakódok
-- Helyi járműprofil-mentés
-- PWA manifest és offline cache (service worker)
+A repository gyökérkönyvtárába töltsd fel egyszerre ezt az 5 fájlt:
+index.html
+manifest.webmanifest
+sw.js
+icon-192.png
+icon-512.png
+
+Nincs szükség mappára, minden fájl a repository gyökerébe kerül.
 
 FONTOS:
-Ez egy telepíthető PWA ALAP-PROTOTÍPUS, nem teljes gyári alkatrészkatalógus.
-A fékalkatrészeknél szándékosan nem szerepelnek ellenőrizetlen OE cikkszámok.
-A kompatibilitást VIN, PR-kód, gyártási idő, motorkód és hajtás szerint kell igazolni.
-A képernyőn látható mintaadatok nem helyettesítik a VW gyári javítási dokumentációt.
+Ez az egységes, reszponzív PWA-alap teljes navigációval, járműprofillal,
+kereshető modulokkal és offline cache-alappal. A teljes, igazolt VW hibakód-
+adatbázis, OE cikkszámkatalógus, licencelt gyári robbantott ábrák és valódi
+360 fokos 3D modell még külön adatbeszerzést és fejlesztést igényel.
+Nem helyettesítjük ezeket kitalált cikkszámokkal vagy ábrákkal.
 
-Telepítés:
-1. A ZIP tartalmát töltsd fel HTTPS-t támogató tárhelyre (pl. saját webtárhely).
-2. Nyisd meg a webcímet Androidon Chrome-ban, majd válaszd az „Alkalmazás telepítése”
-   vagy „Hozzáadás a kezdőképernyőhöz” lehetőséget.
-3. iPhone-on nyisd meg Safariban, majd Megosztás → Főképernyőhöz adás.
-4. Az első online megnyitás után az alkalmazás gyorsítótárazott részei offline is elérhetők.
-
-Fejlesztői megjegyzés:
-A böngészős telepítéshez HTTPS szükséges (localhost kivétel fejlesztéskor).
-A Google Play / Apple App Store kiadáshoz külön csomagolás, aláírás,
-tesztelés és áruházi publikálás szükséges.
+GitHub Pages: Settings → Pages → Deploy from a branch → main → /(root) → Save.
