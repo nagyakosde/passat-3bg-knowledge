@@ -1,6 +1,0 @@
-PASSAT 3BG NEXUS – RELEASE 2.0
-A ZIP gyökérkönyvtárában négy fájl van: index.html, sw.js, manifest.webmanifest, README-HU.txt.
-Funkciók: modern mobilos felület; navigációs modulok; helyi járműprofil; kereshető OBD-II mintakódok; alkatrészcsoportok; Sedan és Variant Sketchfab 3D nézet; motor, ABS/ESP, légzsák, váltó, komfort, immobilizer, klíma, műszeregység és kommunikációs modulok; PWA offline alkalmazásváz.
-KORLÁTOK: ez nem teljes gyári VAG hibakód-adatbázis, nem teljes OE cikkszám-export, és nem tartalmaz gyári robbantott ábrákat. Nem találunk ki cikkszámot. A pontos alkatrészazonosításhoz VIN, PR-kód, motorkód, váltókód és hiteles gyári katalógus szükséges. A Sketchfab modellek közösségi külső modellek, nem VW gyári CAD-adatok; a 3D nézet internetet igényel. A 4Motion választó nem módosítja a modell geometriáját.
-Források: https://volkswagen.erwin-store.com/ ; https://www.partslink24.com/ ; https://wiki.ross-tech.com/wiki/index.php/Official_Factory_Repair_Information ; https://www.volkswagen-newsroom.com/en/vehicle-data-passat-b5-profile-19547
-Feltöltés: mind a négy fájlt közvetlenül a GitHub repository main ágának gyökérkönyvtárába töltsd fel, almappa nélkül. GitHub Pages: Deploy from a branch / main / root.
