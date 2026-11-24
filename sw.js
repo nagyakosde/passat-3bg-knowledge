@@ -1,7 +1,7 @@
-const CACHE = 'passat-3bg-nexus-r5';
+const CACHE = 'passat-3bg-nexus-r7';
 const FILES = [
   './','./index.html','./manifest.webmanifest',
-  './passat-variant.webp','./wireframe-car.webp',
+  './passat-variant.webp','./passat-sedan.webp','./wireframe-car.webp',
   './module-engine.webp','./module-brakes.webp','./module-turbo.webp','./module-electrical.webp','./module-body.webp',
   './icon-192.png','./icon-512.png'
 ];
